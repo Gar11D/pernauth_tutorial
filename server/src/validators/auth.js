@@ -29,6 +29,7 @@ const loginFieldsCheck = check('email'). custom(async(value, {req}) => {
     if (!validPassword) {
         throw new Error('Invalid password entry')
     }
+    req.user = user.rows[0];
 })
 
 module.exports = {
