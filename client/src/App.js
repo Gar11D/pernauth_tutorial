@@ -9,6 +9,7 @@ import Dashboard from './pages/dashboard';
 import Home from './pages/home';
 import Login from './pages/login';
 import Register from './pages/register';
+import Navbar from './components/navbar';
 
 const PrivateRoutes = () => {
   const isAuth = false;
