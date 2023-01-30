@@ -11,6 +11,8 @@ const Register = () => {
   const [success, setSuccess] = useState(false);
 
   const onChange = (e) => {
+    setSuccess('');
+    setError('');
     setValues({...values, [e.target.name]: e.target.value})
   };
 
