@@ -1,7 +1,19 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
+import { json } from 'react-router-dom';
+
+const userAuthFromLocalStorage = () => {
+  const isAuth = localStorage.getItem('isAuth');
+
+  if(isAuth && JSON.parse(isAuth) === true) {
+    return true
+  }
+
+  return false;
+
+}
 
 const initialState = { 
-    isAuth: false 
+    isAuth: userAuthFromLocalStorage(), 
 }
 
 const authSlice = createSlice({

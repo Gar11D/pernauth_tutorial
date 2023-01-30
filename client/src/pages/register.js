@@ -19,7 +19,7 @@ const Register = () => {
     try{
       const {data} = await onRegistration(values);
       setError('');
-      setSuccess('data.message');
+      setSuccess(data.message);
       setValues({email: '', password: ''})
     } catch(error) {
       console.log(error.response.data.errors[0].msg);
@@ -63,6 +63,7 @@ const Register = () => {
           />
         </div>
         <div style={{color: 'red', margin: '10px 0'}}>{error}</div>
+        <div style={{color: 'green', margin: '10px 0'}}>{success}</div>
         <button type="submit" className="btn btm-primary">
           Submit
         </button>
